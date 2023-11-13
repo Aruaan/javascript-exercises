@@ -1,19 +1,6 @@
-const palindromes = function (stringToBeReversed) {
-  let isAPalindrome = false
-  let originalString = ''
-  let reversedString = ''
-  for(i = 0; i < stringToBeReversed.length ; i++){
-    if(stringToBeReversed[i].match(/[a-zA-Z0-9]/)){
-      originalString += stringToBeReversed[i]
-    }
-  }
-  for(i = originalString.length - 1; i >= 0; i--){
-    reversedString +=originalString[i]
-  }
-  if(originalString.toLowerCase() == reversedString.toLowerCase()){
-    isAPalindrome = true
-  }
-  return isAPalindrome
+const palindromes = function (string) {
+  const processedString = string.toLowerCase().replace(/[^a-z0-9]/g, "")
+  return processedString.split("").reverse().join("") == processedString
 };
 
 // Do not edit below this line
